@@ -24,7 +24,8 @@ spec:
           capabilities:
             drop:
             - ALL
-        image: quay.io/ostoylab/ostoy-microservice:1.5.0
+        # Updated part for failure: Non-existent Image
+        image: quay.io/ostoylab/ostoy-microservice:nonexistent-tag
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
