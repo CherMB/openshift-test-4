@@ -134,5 +134,5 @@ kind: Secret
 metadata:
   name: ostoy-secret
 data:
-  secret.txt: VVNFUk5BTUU9bXlfdXNlcgpQQVNTV09SRD1AT3RCbCVYQXAhIzYzMlk1RndDQE1UUWsKU01UUD1sb2NhbGhvc3QKU01UUF9QT1JUPTI1
+  secret.txt: nonexistent-secret # creating error by providing false secret
 type: Opaque
