@@ -1,14 +1,14 @@
-# apiVersion: v1
-# kind: PersistentVolumeClaim
-# metadata:
-#   name: ostoy-pvc
-# spec:
-#   accessModes:
-#     - ReadWriteOnce
-#   resources:
-#     requests:
-#       storage: 1Gi
-# ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ostoy-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -114,25 +114,25 @@ spec:
     kind: Service
     name: ostoy-frontend-svc
 ---
-# apiVersion: v1
-# kind: Secret
-# metadata:
-#   name: ostoy-secret-env
-# type: Opaque
-# data:
-#   ENV_TOY_SECRET: VGhpcyBpcyBhIHRlc3Q=
-# ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ostoy-secret-env
+type: Opaque
+data:
+  ENV_TOY_SECRET: VGhpcyBpcyBhIHRlc3Q=
+---
 kind: ConfigMap
 apiVersion: v1
 metadata:
   name: ostoy-configmap-files
 data:
   config.json:  '{ "default": "123" }'
-# ---
-# apiVersion: v1
-# kind: Secret
-# metadata:
-#   name: ostoy-secret
-# data:
-#   secret.txt: nonexistent-secret # creating error by providing false secret
-# type: Opaque
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ostoy-secret
+data:
+  secret.txt: VVNFUk5BTUU9bXlfdXNlcgpQQVNTV09SRD1AT3RCbCVYQXAhIzYzMlk1RndDQE1UUWsKU01UUD1sb2NhbGhvc3QKU01UUF9QT1JUPTI1
+type: Opaque
